@@ -16,7 +16,6 @@ import java.util.List;
  * Interface for managing inventory operations.
  */
 @RequestMapping("/dbs/inventory")
-@CrossOrigin(origins = "http://localhost:4200")
 public interface InventoryController {
 
 
