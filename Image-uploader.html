@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Book Image</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .upload-container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 400px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label, input[type="text"], input[type="file"] {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+    input[type="text"], input[type="file"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="upload-container">
+  <h2>Upload Image to Book</h2>
+
+  <label for="bookId">Book ID:</label>
+  <input type="text" id="bookId" name="bookId" required>
+
+  <form id="uploadForm" method="POST" enctype="multipart/form-data">
+    <input type="file" name="imageFile" required>
+    <input type="submit" value="Upload">
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('uploadForm');
+  const bookIdInput = document.getElementById('bookId');
+
+  form.addEventListener('submit', function(event) {
+    const bookId = bookIdInput.value.trim();
+    if (!bookId) {
+      alert("Please enter a Book ID.");
+      event.preventDefault();
+      return;
+    }
+
+    form.action = `http://localhost:8085/dbs/books/${bookId}/upload-image`;
+  });
+</script>
+
+</body>
+</html>

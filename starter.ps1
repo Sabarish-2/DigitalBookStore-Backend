@@ -1,0 +1,7 @@
+Start-Process "java" "-jar .\EurekaServer\target\EurekaServer-0.0.1-SNAPSHOT.jar"
+Start-Process "java" "-jar .\API_Gateway\target\apiGateway-0.0.1-SNAPSHOT.jar"
+Start-Process "java" "-jar .\DbsInventoryModule\target\DbsInventoryModule-0.0.1-SNAPSHOT.jar"
+Start-Process "java" "-jar .\DBUSERModule1\target\DBUSERModule1-0.0.1-SNAPSHOT.jar"
+Start-Process "java" "-jar .\OrderManagement\target\OrderManagement-0.0.1-SNAPSHOT.jar"
+Start-Process "java" "-jar .\ProjectDBSBookCatalog\target\ProjectDBSBookCatalog-0.0.1-SNAPSHOT.jar"
+Start-Process "java" "--enable-preview -jar .\ReviewAndRatingModule\target\ReviewAndRatingModule-0.0.1-SNAPSHOT.jar"

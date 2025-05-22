@@ -75,7 +75,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/user_db?createDatabaseIfNotExist=true
     username: root
-    password: Root
+    password: root
   boot:
     admin:
       client:
@@ -117,7 +117,7 @@ springdoc:
     enabled: true
   swagger-ui:
     enabled: true
-#
+
 #logging:
 #  level:
 #    org:
